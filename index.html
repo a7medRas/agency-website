@@ -20,46 +20,14 @@
       background-color: #3c2a2a;
       padding: 20px;
       color: #fff;
+      text-align: center;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      text-align: center;
     }
-    nav ul {
-      list-style-type: none;
-      padding: 0;
-      text-align: center;
+    header h1 {
+      margin: 0;
     }
-    nav ul li {
-      display: inline-block;
-      margin: 20px;
-    }
-    nav ul li a {
-      color: #f2c14e;
-      text-decoration: none;
-      font-size: 18px;
-      padding: 10px 20px;
-      background-color: #3c2a2a;
-      border-radius: 20px;
-    }
-    nav ul li a:hover {
-      color: #fff;
-      background-color: #f2c14e;
-    }
-    footer {
-      text-align: center;
-      background-color: #3c2a2a;
-      color: #fff;
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      bottom: 0;
-    }
-    .content-container {
-      text-align: center;
-      margin: 20px;
-    }
-
     /* Sidebar styles */
     .sidebar {
       height: 100%;
@@ -95,6 +63,43 @@
       font-size: 30px;
       cursor: pointer;
       color: #f2c14e;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      text-align: center;
+      margin-top: 20px;
+    }
+    nav ul li {
+      display: inline-block;
+      margin: 20px;
+    }
+    nav ul li a {
+      color: #f2c14e;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #3c2a2a;
+      border-radius: 20px;
+    }
+    nav ul li a:hover {
+      color: #fff;
+      background-color: #f2c14e;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #3c2a2a;
+      color: #fff;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    .content-container {
+      text-align: center;
+      margin: 20px;
     }
 
     /* Announcement banner */
@@ -136,6 +141,7 @@
         transform: translateX(-100%);
       }
     }
+
     /* Dark Mode */
     body.dark-mode {
       background-color: #121212;
@@ -157,6 +163,7 @@
     .dark-mode nav ul li a:hover {
       color: #f2c14e;
     }
+
   </style>
 </head>
 <body>
@@ -172,22 +179,27 @@
     <div>
       <h1>وكالة ذيب</h1>
     </div>
-    <!-- Hamburger Menu Icon -->
     <div class="hamburger-menu" onclick="openNav()">☰</div>
   </header>
 
   <!-- Sidebar (Hidden by default) -->
   <div id="mySidebar" class="sidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="https://a7medras.github.io/broadcaster-guide/" target="_blank">دليل المذيع</a>
-    <a href="faaliyat_page.html">الفاعليات والمسابقات</a>
-    <a href="magala_theeb_page.html">مجلة الذيب</a>
-    <a href="tarqiat_page.html">الترقيات</a>
-    <a href="fatooraty_page.html">فاتورتي</a>
     <a href="javascript:void(0)" onclick="changeLanguage('ar')">العربية</a>
     <a href="javascript:void(0)" onclick="changeLanguage('en')">English</a>
     <a href="javascript:void(0)" onclick="toggleDarkMode()">🌙 / 🌞 الوضع الليلي</a>
   </div>
+
+  <!-- Navigation for Sections (Displayed below the header) -->
+  <nav>
+    <ul>
+      <li><a href="https://a7medras.github.io/broadcaster-guide/" target="_blank">دليل المذيع</a></li>
+      <li><a href="faaliyat_page.html">الفاعليات والمسابقات</a></li>
+      <li><a href="magala_theeb_page.html">مجلة الذيب</a></li>
+      <li><a href="tarqiat_page.html">الترقيات</a></li>
+      <li><a href="fatooraty_page.html">فاتورتي</a></li>
+    </ul>
+  </nav>
 
   <!-- Main Content -->
   <main>
