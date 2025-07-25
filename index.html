@@ -59,6 +59,44 @@
       text-align: center;
       margin: 20px;
     }
+
+    /* Sidebar styles */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #3c2a2a;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #f2c14e;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      color: #fff;
+    }
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    /* The hamburger icon */
+    .hamburger-menu {
+      font-size: 30px;
+      cursor: pointer;
+      color: #f2c14e;
+    }
+
     /* Announcement banner */
     .announcement {
       background-color: #f5deb3; /* Beige color */
@@ -134,18 +172,22 @@
     <div>
       <h1>وكالة ذيب</h1>
     </div>
+    <!-- Hamburger Menu Icon -->
+    <div class="hamburger-menu" onclick="openNav()">☰</div>
   </header>
 
-  <!-- Navigation (Centered) -->
-  <nav>
-    <ul>
-      <li><a href="https://a7medras.github.io/broadcaster-guide/" target="_blank">دليل المذيع</a></li>
-      <li><a href="faaliyat_page.html">الفاعليات والمسابقات</a></li>
-      <li><a href="magala_theeb_page.html">مجلة الذيب</a></li>
-      <li><a href="tarqiat_page.html">الترقيات</a></li>
-      <li><a href="fatooraty_page.html">فاتورتي</a></li>
-    </ul>
-  </nav>
+  <!-- Sidebar (Hidden by default) -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="https://a7medras.github.io/broadcaster-guide/" target="_blank">دليل المذيع</a>
+    <a href="faaliyat_page.html">الفاعليات والمسابقات</a>
+    <a href="magala_theeb_page.html">مجلة الذيب</a>
+    <a href="tarqiat_page.html">الترقيات</a>
+    <a href="fatooraty_page.html">فاتورتي</a>
+    <a href="javascript:void(0)" onclick="changeLanguage('ar')">العربية</a>
+    <a href="javascript:void(0)" onclick="changeLanguage('en')">English</a>
+    <a href="javascript:void(0)" onclick="toggleDarkMode()">🌙 / 🌞 الوضع الليلي</a>
+  </div>
 
   <!-- Main Content -->
   <main>
@@ -209,6 +251,16 @@
     setTimeout(function() {
       document.getElementById('promotion-banner').style.display = 'none';
     }, 30000);
+
+    // Open Sidebar
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+
+    // Close Sidebar
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
   </script>
 
 </body>
