@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>الوكالة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <style>
     body {
       font-family: 'Cairo', sans-serif;
@@ -113,8 +116,12 @@
   <!-- Main Content -->
   <main>
     <section class="content-container">
-      <h2>مرحبًا بك في وكالة ذيب</h2>
-      <p>استكشف جميع الأقسام المختلفة لمتابعة أحدث الفاعليات والمسابقات، ودليل المذيعين، وأحدث المقالات في مجلتنا.</p>
+      <h2 data-aos="fade-up" data-aos-duration="1000">مرحبًا بك في وكالة ذيب</h2>
+      <p data-aos="fade-up" data-aos-duration="2000">استكشف جميع الأقسام المختلفة لمتابعة أحدث الفاعليات والمسابقات، ودليل المذيعين، وأحدث المقالات في مجلتنا.</p>
+      <div>
+        <button onclick="changeLanguage('ar')">العربية</button>
+        <button onclick="changeLanguage('en')">English</button>
+      </div>
     </section>
   </main>
 
@@ -122,5 +129,45 @@
   <footer>
     <p>جميع الحقوق محفوظة لوكالة ذيب 2025</p>
   </footer>
+
+  <!-- Chatbot Integration (Tidio) -->
+  <script src="//code.tidio.co/your-unique-code.js" async></script>
+
+  <script>
+    // Initialize AOS (Animation)
+    AOS.init();
+
+    // i18next initialization
+    i18next.init({
+      lng: 'ar', // Default language
+      resources: {
+        en: {
+          translation: {
+            welcome: "Welcome to Theeb Agency",
+            promotion: "The broadcaster 56675**** has been upgraded to VIP!"
+          }
+        },
+        ar: {
+          translation: {
+            welcome: "مرحبًا بك في وكالة ذيب",
+            promotion: "المذيع 56675**** قد تم ترقيته إلى VIP!"
+          }
+        }
+      }
+    }, function(err, t) {
+      // Apply translation
+      document.querySelector('h2').innerText = i18next.t('welcome');
+      document.querySelector('p').innerText = i18next.t('promotion');
+    });
+
+    // Function to change language
+    function changeLanguage(lang) {
+      i18next.changeLanguage(lang, function(err, t) {
+        document.querySelector('h2').innerText = i18next.t('welcome');
+        document.querySelector('p').innerText = i18next.t('promotion');
+      });
+    }
+  </script>
+
 </body>
 </html>
