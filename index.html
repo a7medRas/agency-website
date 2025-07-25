@@ -51,26 +51,37 @@
     .announcement {
       background-color: #f2c14e;
       color: #3c2a2a;
-      padding: 10px 0;
-      text-align: center;
-      font-size: 18px;
+      padding: 8px 20px;
+      font-size: 16px;
       font-weight: bold;
       position: fixed;
       top: 0;
-      width: 100%;
+      width: auto;
+      border-radius: 20px;
       z-index: 1000;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       align-items: center;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: moveText 10s linear infinite;
     }
     .announcement a {
       color: #3c2a2a;
       text-decoration: none;
       font-size: 20px;
-      margin-right: 20px;
+      margin-left: 20px;
     }
     .announcement a:hover {
       text-decoration: underline;
+    }
+    @keyframes moveText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
     }
   </style>
 </head>
